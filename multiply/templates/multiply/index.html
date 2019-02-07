@@ -1,0 +1,6 @@
+<h1>Home</h1>
+<form action="{% url 'multi' %}" method="post">
+{% csrf_token %}
+insert your number:<input type="number" name="num">
+<input type="submit" value="enter">
+</form>
