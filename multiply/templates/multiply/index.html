@@ -1,7 +1,7 @@
-<h1>Home</h1>
+<h1>Multiplication</h1>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 <form action="{% url 'multi' %}" method="post">
 {% csrf_token %}
-insert your number:<input type="number" name="num">
+insert your number:</br><input type="number" name="num">
 <input type="submit" value="enter">
 </form>
