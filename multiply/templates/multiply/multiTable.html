@@ -1,5 +1,14 @@
-<ul>
+<center><h2>mulitiplication table</h2>
+<style>
+ table, th ,td{border:1px solid black; border-collapse: collapse;}
+</style>
+<table width="30%">
+   
+
 {% for r in results %}
-    <li><p>{{number}} X {{ forloop.counter }} = {{r}}</p></li>
+    <tr><td>{{number}} X {{ forloop.counter }}</td><td>{{r}}</td></tr>
 {% endfor %}
-</ul>
+</table>
+</center>
+
+<a href="{% url 'index' %}">back</a>

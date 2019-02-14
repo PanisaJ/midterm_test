@@ -8,11 +8,9 @@ def mulitiplication(request):
         try:
              Statistic.objects.get(number=number)
         except:
-             print("nooo")
              added_number = Statistic(number=number,times=1)
              added_number.save()
         else:
-             print("yesss")
              get_number = Statistic.objects.get(number=number)
              get_number.times += 1
              get_number.save()
@@ -31,4 +29,5 @@ def index(request):
     return render(request,'multiply/index.html')
 
 def history(request):
-    return render(request,'multiply/history.html')
+    number_list = Statistic.objects.order_by('-times')
+    return render(request,'multiply/history.html',{'number_list':number_list})

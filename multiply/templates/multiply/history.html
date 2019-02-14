@@ -1,3 +1,16 @@
-<ul>
-<li></li>
-</ul>
+<h2>History</h2>
+<style>
+ table, th ,td{border:1px solid black; border-collapse: collapse;}
+</style>
+<table width="20%">
+   <tr>
+       <th>Number</th>
+       <th>times</th>
+    </tr>
+
+{% for n in number_list %}
+<tr><td>{{n.number}}</td><td>{{n.times}}</td></tr>
+{% endfor %}
+</table>
+</br>
+<a href="{% url 'index' %}">back</a>
