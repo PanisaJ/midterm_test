@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+class Statistic(models.Model):
+    number = models.IntegerField(default=0)
+    times = models.IntegerField(default=0)
+    def __int__(self):
+        return self.number
