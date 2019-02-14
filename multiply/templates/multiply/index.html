@@ -5,4 +5,14 @@
 insert your number:</br><input type="number" name="num">
 <input type="submit" value="enter">
 </form>
-<a href="{% url 'history' %}">History</a>
+
+<form action="{% url 'history' %}" method="post">
+{% csrf_token %}
+sort:
+<select name="sort">
+  <option value="number">number</option>
+  <option value="times">times</option>
+</select>
+<input type="submit" value="History">
+</form>
+

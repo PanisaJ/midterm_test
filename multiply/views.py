@@ -29,5 +29,10 @@ def index(request):
     return render(request,'multiply/index.html')
 
 def history(request):
-    number_list = Statistic.objects.order_by('-times')
-    return render(request,'multiply/history.html',{'number_list':number_list})
+    if request.POST.get('sort') == "number" :
+        number_list = Statistic.objects.order_by('number')
+        sort_by = "number"
+    else:
+        number_list = Statistic.objects.order_by('-times')
+        sort_by = "times"
+    return render(request,'multiply/history.html',{'number_list':number_list,'sort_by':sort_by,})
